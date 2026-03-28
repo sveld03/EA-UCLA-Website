@@ -11,7 +11,6 @@ The official website for EA at UCLA. Built with plain HTML/Vanilla JS and Vite.
 | `ea.html` | `/ea` | What is EA? — educational content, curated EA Forum feed |
 | `career-accelerator.html` | `/career-accelerator` | Career Accelerator program details |
 | `project-incubator.html` | `/project-incubator` | Project Incubator program details |
-| `manifesto.html` | `/manifesto` | EA at UCLA Manifesto (long-form) |
 
 ## Tech Stack
 
@@ -37,7 +36,7 @@ npm run preview   # preview the build
 ```
 public/           # Vite static assets (served at /)
   Media/          # Team photos and images
-  Docs/           # PDFs (manifesto, etc.)
+  Docs/           # PDFs
 Media/            # Source copies of media files
 ```
 
