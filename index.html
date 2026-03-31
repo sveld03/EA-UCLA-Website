@@ -107,7 +107,8 @@ background-size: 10px 10px;
 
     <!-- Navigation (Sticky) -->
     <header class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center">
+            <!-- Logo -->
             <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <img src="EAAUCLAlogo.png" alt="EA at UCLA" class="h-10 w-auto logo-blue">
                 <div class="flex flex-col leading-none">
@@ -116,52 +117,49 @@ background-size: 10px 10px;
                 </div>
             </div>
 
-            <!-- Navigation Islands -->
-            <div class="hidden md:flex items-center gap-3">
-                <!-- Island 1: About Us (Link) - LEFT -->
-                <a href="community.html" class="flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium text-slate-500 hover:text-cardinal hover:bg-slate-100/50 transition-all">
+            <!-- Right side -->
+            <div class="flex items-center gap-2 ml-auto">
+                <div class="hidden md:flex items-center gap-2 ml-8">
+                    <a href="https://mailchi.mp/a035f07ff2df/ea-ucla-newsletter-signup-form" target="_blank" class="bg-white text-slate-900 border border-slate-200 px-4 py-2 rounded-full text-xs font-medium tracking-wide hover:bg-cardinal hover:text-white hover:border-cardinal transition-colors shadow-lg shadow-slate-900/10">
+                        Join Newsletter
+                    </a>
+                    <a href="https://discord.com/invite/BqRrBmBtPq" target="_blank" class="bg-white text-slate-900 border border-slate-200 px-4 py-2 rounded-full text-xs font-medium tracking-wide hover:bg-cardinal hover:text-white hover:border-cardinal transition-colors shadow-lg shadow-slate-900/10">
+                        Join Discord
+                    </a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-slate-100/50 border border-slate-200/50 text-slate-600 hover:text-cardinal transition-colors">
+                    <iconify-icon id="menu-icon" icon="solar:hamburger-menu-linear" class="text-xl"></iconify-icon>
+                </button>
+            </div>
+        </div>
+
+        <!-- Nav pill centered; flanking links absolutely offset from its edges -->
+        <div class="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <!-- About Us: anchored to the left edge of the pill -->
+            <div class="absolute right-full top-1/2 -translate-y-1/2 flex items-center gap-3 pr-3 pointer-events-none">
+                <a href="community.html" class="flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium text-slate-500 hover:text-cardinal hover:bg-slate-100/50 transition-all whitespace-nowrap pointer-events-auto">
                     <iconify-icon icon="solar:arrow-left-linear" class="w-3 h-3"></iconify-icon>
                     <span>About Us</span>
                 </a>
-
-                <!-- Island Separator -->
                 <div class="w-px h-6 bg-slate-200"></div>
-
-                <!-- Island 2: EA at UCLA (Active) - CENTER -->
-                <nav class="flex items-center gap-1 bg-slate-100/50 p-1 rounded-full border border-slate-200/50 relative">
-                    <div id="nav-indicator" class="absolute h-[calc(100%-8px)] bg-white rounded-full shadow-sm transition-all duration-300 ease-out" style="left: 4px; width: 54px;"></div>
-                    <a href="#hero" data-nav="hero" class="nav-link px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 hover:text-cardinal transition-all relative z-10">Start</a>
-                    <a href="#fellowships" data-nav="fellowships" class="nav-link px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 hover:text-cardinal transition-all relative z-10">Programs</a>
-                    <a href="#events" data-nav="events" class="nav-link px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 hover:text-cardinal transition-all relative z-10">Events</a>
-                    <a href="#projects" data-nav="projects" class="nav-link px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 hover:text-cardinal transition-all relative z-10">Writing</a>
-                </nav>
-
-                <!-- Island Separator -->
+            </div>
+            <!-- Nav pill (the only in-flow child — this is what gets centered) -->
+            <nav class="flex items-center gap-1 bg-slate-100/50 p-1 rounded-full border border-slate-200/50 relative">
+                <div id="nav-indicator" class="absolute h-[calc(100%-8px)] bg-white rounded-full shadow-sm transition-all duration-300 ease-out" style="left: 4px; width: 54px;"></div>
+                <a href="#hero" data-nav="hero" class="nav-link px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 hover:text-cardinal transition-all relative z-10">Start</a>
+                <a href="#fellowships" data-nav="fellowships" class="nav-link px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 hover:text-cardinal transition-all relative z-10">Programs</a>
+                <a href="#events" data-nav="events" class="nav-link px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 hover:text-cardinal transition-all relative z-10">Events</a>
+                <a href="#projects" data-nav="projects" class="nav-link px-4 py-1.5 rounded-full text-xs font-medium text-slate-600 hover:text-cardinal transition-all relative z-10">Writing</a>
+            </nav>
+            <!-- Effective Altruism: anchored to the right edge of the pill -->
+            <div class="absolute left-full top-1/2 -translate-y-1/2 flex items-center gap-3 pl-3 pointer-events-none">
                 <div class="w-px h-6 bg-slate-200"></div>
-
-                <!-- Island 3: Effective Altruism (Link) - RIGHT -->
-                <a href="ea.html" class="flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium text-slate-500 hover:text-eablue hover:bg-slate-100/50 transition-all">
+                <a href="ea.html" class="flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium text-slate-500 hover:text-eablue hover:bg-slate-100/50 transition-all whitespace-nowrap pointer-events-auto">
                     <span>Effective Altruism</span>
                     <iconify-icon icon="solar:arrow-right-linear" class="w-3 h-3"></iconify-icon>
                 </a>
             </div>
-
-            <div class="hidden sm:flex items-center gap-2">
-                <a href="https://mailchi.mp/a035f07ff2df/ea-ucla-newsletter-signup-form" target="_blank" class="bg-white text-slate-900 border border-slate-200 px-4 py-2 rounded-full text-xs font-medium tracking-wide hover:bg-cardinal hover:text-white hover:border-cardinal transition-colors shadow-lg shadow-slate-900/10">
-                    Join Newsletter
-                </a>
-                <a href="https://discord.com/invite/BqRrBmBtPq" target="_blank" class="bg-white text-slate-900 border border-slate-200 px-4 py-2 rounded-full text-xs font-medium tracking-wide hover:bg-cardinal hover:text-white hover:border-cardinal transition-colors shadow-lg shadow-slate-900/10">
-                    Join Discord
-                </a>
-                <a href="https://linktr.ee/effectivealtruismUCLA" target="_blank" class="bg-white text-green-700 border border-green-200 px-4 py-2 rounded-full text-xs font-medium tracking-wide hover:bg-green-600 hover:text-white hover:border-green-600 transition-colors shadow-lg shadow-slate-900/10">
-                    Linktree
-                </a>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-slate-100/50 border border-slate-200/50 text-slate-600 hover:text-cardinal transition-colors">
-                <iconify-icon id="menu-icon" icon="solar:hamburger-menu-linear" class="text-xl"></iconify-icon>
-            </button>
         </div>
 
         <!-- Mobile Dropdown Menu -->
@@ -173,7 +171,6 @@ background-size: 10px 10px;
 <div class="border-t border-slate-100 my-2"></div>
                 <a href="https://mailchi.mp/a035f07ff2df/ea-ucla-newsletter-signup-form" target="_blank" class="px-4 py-3 rounded-xl text-sm font-medium text-white bg-cardinal hover:bg-cardinal/90 transition-colors text-center">Join Newsletter</a>
                 <a href="https://discord.com/invite/BqRrBmBtPq" target="_blank" class="px-4 py-3 rounded-xl text-sm font-medium text-white bg-cardinal hover:bg-cardinal/90 transition-colors text-center">Join Discord</a>
-                <a href="https://linktr.ee/effectivealtruismUCLA" target="_blank" class="px-4 py-3 rounded-xl text-sm font-medium text-white bg-green-600 hover:bg-green-700 transition-colors text-center">Linktree</a>
             </nav>
         </div>
     </header>
@@ -611,12 +608,18 @@ background-size: 10px 10px;
             <div class="max-w-7xl mx-auto relative z-10">
 
                 <!-- Section Header -->
-                <div class="mb-12">
-                    <span class="text-eablue font-mono text-xs uppercase tracking-widest mb-3 block">04 — Writing</span>
-                    <h2 class="font-serif text-4xl md:text-5xl text-slate-900 tracking-tight mb-4">Research & Writing</h2>
-                    <p class="text-slate-500 max-w-xl text-sm leading-relaxed">
-                        Explore our community's research and blog posts on high-impact cause areas.
-                    </p>
+                <div class="mb-12 flex items-end justify-between">
+                    <div>
+                        <span class="text-eablue font-mono text-xs uppercase tracking-widest mb-3 block">04 — Writing</span>
+                        <h2 class="font-serif text-4xl md:text-5xl text-slate-900 tracking-tight mb-4">Research & Writing</h2>
+                        <p class="text-slate-500 max-w-xl text-sm leading-relaxed">
+                            Explore our community's research and blog posts on high-impact cause areas.
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-amber-300/50 bg-amber-50/60 shrink-0">
+                        <div class="w-1.5 h-1.5 rounded-full bg-uclagold shrink-0"></div>
+                        <span class="font-mono text-[10px] text-amber-700 font-medium tracking-wide uppercase">Selected Works</span>
+                    </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="selected-grid">
@@ -747,7 +750,7 @@ background-size: 10px 10px;
         // --- NAV INDICATOR ---
         const navIndicator = document.getElementById('nav-indicator');
         const navLinks = document.querySelectorAll('.nav-link');
-        const sections = ['hero', 'fellowships', 'projects', 'events'];
+        const sections = ['hero', 'fellowships', 'events', 'projects'];
 
         function updateNavIndicator(activeNav) {
             const activeLink = document.querySelector(`[data-nav="${activeNav}"]`);
@@ -958,7 +961,7 @@ background-size: 10px 10px;
             {
                 url: 'https://blog.ai-futures.org/p/what-happens-when-superhuman-ais',
                 title: 'What Happens When Superhuman AIs Compete for Control?',
-                description: 'A branch of AI 2027 exploring how AI development may progress over the next few years.',
+                description: 'A branch of <span onclick="event.stopPropagation();window.open(\'https://ai-2027.com\',\'_blank\')" class="underline cursor-pointer hover:text-cardinal transition-colors">AI 2027</span> exploring how AI development may progress over the next few years.',
                 date: 'Jan 2026',
                 category: 'AI Forecasting',
                 author: 'Steven Veld',
